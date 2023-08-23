@@ -52,5 +52,6 @@ RUN dnf -y install \
     xclip \
     xfsdump \
     zsh && \
-  dnf update -y
+  dnf update -y && \
+  dnf clean all
 
