@@ -1,0 +1,57 @@
+# buildah bud -t fedora-toolbox-ikke:39 Containerfile-f39
+FROM registry.fedoraproject.org/fedora-toolbox:39
+
+RUN dnf -y install \
+    https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+    https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm && \
+  dnf install -y \
+    ImageMagick \
+    ImageMagick-heic \
+    bat \
+    btop \
+    cpio \
+    dh-autoreconf \
+    efibootmgr \
+    esptool \
+    exa \
+    fd-find \
+    feh \
+    ffmpeg \
+    ffmpeg-libs \
+    flatpak \
+    fzf \
+    gcc-c++ \
+    gdisk \
+    gpicview \
+    grub2-efi-x64-modules \
+    grub2-tools-efi \
+    htop \
+    jhead \
+    libavdevice \
+    libheif-tools \
+    libusb1-devel \
+    libva-utils \
+    lshw \
+    minicom \
+    mosh \
+    mosquitto \
+    parted \
+    pciutils \
+    ripgrep \
+    ruby \
+    sshuttle \
+    tig \
+    tmux \
+    unrar \
+    vim \
+    vim-jedi \
+    wireguard \
+    wireguard-tools \
+    wl-clipboard \
+    x264 \
+    xclip \
+    xfsdump \
+    zsh && \
+  dnf update -y && \
+  dnf clean all
+
