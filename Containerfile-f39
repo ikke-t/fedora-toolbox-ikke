@@ -13,7 +13,6 @@ RUN dnf -y install \
     dh-autoreconf \
     efibootmgr \
     esptool \
-    exa \
     fd-find \
     feh \
     ffmpeg \
@@ -37,15 +36,16 @@ RUN dnf -y install \
     mosquitto \
     parted \
     pciutils \
+    powerline-fonts \
+    python3-pip \
     ripgrep \
     ruby \
     sshuttle \
     tig \
     tmux \
     unrar \
-    vim \
+    vim-enhanced \
     vim-jedi \
-    wireguard \
     wireguard-tools \
     wl-clipboard \
     x264 \
@@ -54,4 +54,7 @@ RUN dnf -y install \
     zsh && \
   dnf update -y && \
   dnf clean all
+
+# exa \
+# powerline-fonts \
 
