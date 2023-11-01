@@ -25,6 +25,7 @@ RUN dnf -y install \
     grub2-efi-x64-modules \
     grub2-tools-efi \
     htop \
+    jq \
     jhead \
     libavdevice \
     libheif-tools \
@@ -34,6 +35,7 @@ RUN dnf -y install \
     minicom \
     mosh \
     mosquitto \
+    nmap \
     parted \
     pciutils \
     powerline-fonts \
