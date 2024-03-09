@@ -4,11 +4,15 @@ FROM registry.fedoraproject.org/fedora-toolbox:39
 RUN dnf -y install \
     https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
     https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm && \
+  dnf uninstall -y xdg-open \
   dnf install -y \
     ImageMagick \
     ImageMagick-heic \
+    ack \
     bat \
     btop \
+    butane \
+    coreos-installer \
     cpio \
     dh-autoreconf \
     efibootmgr \
@@ -18,6 +22,7 @@ RUN dnf -y install \
     ffmpeg \
     ffmpeg-libs \
     flatpak \
+    flatpak-xdg-utils \
     fzf \
     gcc-c++ \
     gdisk \
@@ -40,14 +45,19 @@ RUN dnf -y install \
     pciutils \
     powerline-fonts \
     python3-pip \
+    python3-kubernetes \
     ripgrep \
     ruby \
     sshuttle \
+    syntastic \
     tig \
     tmux \
+    tmux-powerline \
     unrar \
+    vim-command-t \
     vim-enhanced \
     vim-jedi \
+    vim-powerline \
     wireguard-tools \
     wl-clipboard \
     x264 \
