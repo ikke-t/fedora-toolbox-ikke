@@ -26,6 +26,7 @@ RUN dnf -y install \
     fzf \
     gcc-c++ \
     gdisk \
+    git \
     gpicview \
     grub2-efi-x64-modules \
     grub2-tools-efi \
@@ -40,6 +41,7 @@ RUN dnf -y install \
     minicom \
     mosh \
     mosquitto \
+    neovim \
     nmap \
     parted \
     pciutils \
@@ -54,6 +56,7 @@ RUN dnf -y install \
     tmux \
     tmux-powerline \
     unrar \
+    unzip \
     vim-command-t \
     vim-enhanced \
     vim-jedi \
