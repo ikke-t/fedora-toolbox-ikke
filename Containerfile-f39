@@ -4,7 +4,8 @@ FROM registry.fedoraproject.org/fedora-toolbox:39
 RUN dnf -y install \
     https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
     https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm && \
-  dnf uninstall -y xdg-open \
+  dnf copr enable atim/lazygit -y && \
+  dnf remove -y xdg-open && \
   dnf install -y \
     ImageMagick \
     ImageMagick-heic \
@@ -33,6 +34,7 @@ RUN dnf -y install \
     htop \
     jq \
     jhead \
+    lazygit \
     libavdevice \
     libheif-tools \
     libusb1-devel \
@@ -69,7 +71,4 @@ RUN dnf -y install \
     zsh && \
   dnf update -y && \
   dnf clean all
-
-# exa \
-# powerline-fonts \
 
