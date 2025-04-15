@@ -1,0 +1,77 @@
+# buildah bud -t fedora-toolbox-ikke:40 Containerfile-f40
+FROM registry.fedoraproject.org/fedora-toolbox:42
+
+RUN dnf -y install \
+    https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+    https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm && \
+  dnf copr enable atim/lazygit -y && \
+  dnf remove -y xdg-open && \
+  dnf install -y \
+    ImageMagick \
+    ImageMagick-heic \
+    ack \
+    bat \
+    btop \
+    butane \
+    coreos-installer \
+    cpio \
+    dh-autoreconf \
+    efibootmgr \
+    esptool \
+    fd-find \
+    feh \
+    ffmpeg \
+    ffmpeg-libs \
+    flatpak \
+    flatpak-xdg-utils \
+    fzf \
+    gcc-c++ \
+    gdisk \
+    git \
+    gpicview \
+    grub2-efi-x64-modules \
+    grub2-tools-efi \
+    htop \
+    jq \
+    jhead \
+    lazygit \
+    libavdevice \
+    libheif-tools \
+    libusb1-devel \
+    libva-utils \
+    lshw \
+    make \
+    minicom \
+    mosh \
+    mosquitto \
+    neovim \
+    nmap \
+    npm \
+    parted \
+    pciutils \
+    powerline-fonts \
+    python3-pip \
+    python3-kubernetes \
+    ripgrep \
+    ruby \
+    skopeo \
+    sshuttle \
+    syntastic \
+    tig \
+    tmux \
+    tmux-powerline \
+    unrar \
+    unzip \
+    vim-command-t \
+    vim-enhanced \
+    vim-jedi \
+    vim-powerline \
+    wireguard-tools \
+    wl-clipboard \
+    x264 \
+    xclip \
+    xfsdump \
+    zsh && \
+  dnf update -y && \
+  dnf clean all
+
